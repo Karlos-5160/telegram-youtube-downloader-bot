@@ -4,11 +4,13 @@ import logging
 import asyncio
 import random
 import datetime
+from keep_alive import keep_alive
 from dotenv import load_dotenv
 from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 
+keep_alive()
 # Load environment variables from .env file
 load_dotenv()
 TOKEN: Final = os.getenv("TOKEN")
