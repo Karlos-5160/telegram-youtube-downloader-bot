@@ -47,19 +47,19 @@ You can configure additional settings by modifying the config.py file, such as d
 ### Contributing
 Contributions are welcome! Please follow these steps to contribute:
 
-Fork the repository.
-Create a new branch: git checkout -b feature-branch-name
-Make your changes and commit them: git commit -m 'Add some feature'
-Push to the branch: git push origin feature-branch-name
-Open a pull request.
+Fork the repository.<br>
+Create a new branch: git checkout -b feature-branch-name <br>
+Make your changes and commit them: git commit -m 'Add some feature' <br>
+Push to the branch: git push origin feature-branch-name <br>
+Open a pull request. <br>
 Please ensure your code adheres to the existing code style and includes appropriate tests.
 
 ### License
 This project is licensed under the © Karlos License . See the LICENSE file for more details.
 
 ### Acknowledgements
-• yt-dlp - The library used for downloading YouTube content.
-• python-telegram-bot - The library used to interact with the Telegram Bot API.
+• yt-dlp - The library used for downloading YouTube content. <br>
+• python-telegram-bot - The library used to interact with the Telegram Bot API. <br>
 • ffmpeg - A complete, cross-platform solution to record, convert, and stream audio and video.
 
 ### Contact
