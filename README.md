@@ -33,7 +33,7 @@ or just search on Telegram @Youtube_Downloader45_Bot
 3. Set up your environment variables. Create a .env file in the project directory and add your Telegram bot token:
       TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
    
-### Usage
+## Usage
 1. Run the bot:
       python bot.py
 
@@ -41,10 +41,10 @@ or just search on Telegram @Youtube_Downloader45_Bot
  
 3. Use desired commands to download a Video
 
-### Configuration
+## Configuration
 You can configure additional settings by modifying the config.py file, such as default download paths, preferred formats, and more.
 
-### Contributing
+## Contributing
 Contributions are welcome! Please follow these steps to contribute:
 
 Fork the repository.<br>
@@ -54,13 +54,13 @@ Push to the branch: git push origin feature-branch-name <br>
 Open a pull request. <br>
 Please ensure your code adheres to the existing code style and includes appropriate tests.
 
-### License
+## License
 This project is licensed under the © Karlos License . See the LICENSE file for more details.
 
-### Acknowledgements
+## Acknowledgements
 • yt-dlp - The library used for downloading YouTube content. <br>
 • python-telegram-bot - The library used to interact with the Telegram Bot API. <br>
 • ffmpeg - A complete, cross-platform solution to record, convert, and stream audio and video.
 
-### Contact
+## Contact
 If you have any questions or feedback, please feel free to contact me at 2003kuldeepchoudhary@gmail.com
