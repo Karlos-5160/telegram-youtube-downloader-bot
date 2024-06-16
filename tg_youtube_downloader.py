@@ -162,12 +162,12 @@ def safe_remove(file_path):
         logger.error(f"Error deleting file: {e}")
 
 
-async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    logger.warning(f'Update {update} caused error {context.error}')
-    await context.bot.send_message(
-        chat_id=update.effective_chat.id,
-        text="Error in downloading the video..."
-    )
+# async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     logger.warning(f'Update {update} caused error {context.error}')
+#     await context.bot.send_message(
+#         chat_id=update.effective_chat.id,
+#         text="Error in downloading the video..."
+#     )
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message_type: str = update.message.chat.type
@@ -251,7 +251,7 @@ if __name__ == "__main__":
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     
     ######## Add Error Handlers
-    app.add_error_handler(error)
+    # app.add_error_handler(error)
 
     ######## Polling the Bot
     print('Polling...')
