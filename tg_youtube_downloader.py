@@ -102,7 +102,7 @@ async def download_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 download_time_seconds = download_time.total_seconds()
                 download_time_formatted = f"{download_time_seconds:.2f}"
                 await update.message.reply_text(f"Download just took --> {download_time_formatted} seconds")
-                await update.message.reply_text("If you have any issues with download speed or video quality then take premium 😉 , for this all credit goes to 🐍 so take Premium 👽 because for premium users same bot is developed in C➕➕")
+                await update.message.reply_text("If you have any issues with download speed or video quality then take premium 😉 , for this all credit goes to 🐍 so take Premium 👽 because for premium users same bot is developed in C ➕➕")
             except Exception as e:
                 logger.error(f"Error uploading video: {e}")
             finally:
