@@ -13,16 +13,54 @@ or just search on Telegram @Youtube_Downloader45_Bot
 - **User-Friendly Interface**: Both in TG and also available in Command-line interface (CLI) for easy interaction.
 - **Error Handling**: Robust error handling to manage various download issues.
 
-## Installation for CLI
+## Installation 
 
 ### Prerequisites
 
 - Python 3.6 or higher
+- A Telegram bot token from [BotFather](https://core.telegram.org/bots#botfather)
 - `ffmpeg` (for audio extraction)
 
 ### Steps
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/youtube-downloader-bot.git
-   cd youtube-downloader-bot
+      git clone https://github.com/Karlos-5160/telegram-youtube-downloader-bot.git
+      cd telegram-youtube-downloader-bot
+2. Install the required dependencies:
+      pip install -r requirements.txt
+   
+3. Set up your environment variables. Create a .env file in the project directory and add your Telegram bot token:
+      TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
+   
+### Usage
+1. Run the bot:
+      python bot.py
+
+2. Open Telegram and start a chat with your bot.
+ 
+3. Use desired commands to download a Video
+
+### Configuration
+You can configure additional settings by modifying the config.py file, such as default download paths, preferred formats, and more.
+
+### Contributing
+Contributions are welcome! Please follow these steps to contribute:
+
+Fork the repository.
+Create a new branch: git checkout -b feature-branch-name
+Make your changes and commit them: git commit -m 'Add some feature'
+Push to the branch: git push origin feature-branch-name
+Open a pull request.
+Please ensure your code adheres to the existing code style and includes appropriate tests.
+
+### License
+This project is licensed under the © Karlos License . See the LICENSE file for more details.
+
+### Acknowledgements
+• yt-dlp - The library used for downloading YouTube content.
+• python-telegram-bot - The library used to interact with the Telegram Bot API.
+• ffmpeg - A complete, cross-platform solution to record, convert, and stream audio and video.
+
+### Contact
+If you have any questions or feedback, please feel free to contact me at 2003kuldeepchoudhary@gmail.com
