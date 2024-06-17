@@ -303,7 +303,7 @@ if __name__ == "__main__":
     ######## Adding Command Handlers
     app.add_handler(CommandHandler('start', start_command))
     app.add_handler(CommandHandler('help', help_command))
-    app.add_handler(CommandHandler('download', download_command))
+    app.add_handler(CommandHandler('download', download_video))
     app.add_handler(CommandHandler('info', info_command))
     app.add_handler(CommandHandler('bored', bored_command))
     
