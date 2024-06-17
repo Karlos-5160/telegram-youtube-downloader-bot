@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
+from telegram.ext import ConversationHandler, CallbackContext
 
 keep_alive()
 # Load environment variables from .env file
@@ -114,6 +115,55 @@ async def download_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text("Please provide a valid URL.")
         await update.message.reply_text("Example: /download https://www.youtube.com/watch?v=dQ")
+
+# Updated version of /download_command -> Adding command handler
+# stages - only one stage in this particular case
+YTURL = range(1)
+async def download_video(update:Update, context:CallbackContext):
+    await update.message.reply_text('✅ Please paste the copied url of your youtube video 🔗')
+    await update.message.reply_text('❌ Use the /cancel command if you dont want to download a video and accidentally clicked the download command, but once you paste the link, the bot will start fetching the video...')
+
+    return YTURL # bot waits to get the url
+
+async def get_url(update:Update, context:CallbackContext):
+    entered_url = update.message.text
+
+    # Now this part written below is same as /download_command (with little modification)
+    try:
+        print(entered_url)
+        initial_time = datetime.datetime.now()
+        await update.message.reply_text("Fetching 👨‍💻.....")
+        await asyncio.sleep(4)  # Wait for 2 seconds
+        await update.message.reply_text("Downloading 👩‍💻.....")
+        video, file_path, file_name = await Download(entered_url)
+        if video:
+            await update.message.reply_text("🖐️ Ruko Zara Sabr Karo 💁‍♂️💁‍♀️ Uploading Video......")
+            try:
+                await update.message.reply_video(video, caption=file_name)
+                final_time = datetime.datetime.now()
+                download_time = final_time - initial_time
+                download_time_seconds = download_time.total_seconds()
+                download_time_formatted = f"{download_time_seconds:.2f}"
+                await update.message.reply_text(f"Download just took --> {download_time_formatted} seconds")
+                await update.message.reply_text("If you have any issues with download speed or video quality then take premium 😉 , for this all credit goes to 🐍 so take Premium 👽 because for premium users same bot is developed in C ➕➕")
+            except Exception as e:
+                logger.error(f"Error uploading video: {e}")
+            finally:
+                safe_remove(file_path)  # Safely delete the video file after uploading
+                return ConversationHandler.END
+
+        else:
+            await update.message.reply_text("An error occurred while downloading the video.")
+            return ConversationHandler.END
+
+    except:
+        await update.message.reply_text("Please provide a valid URL.")
+        await update.message.reply_text("Example: /download https://www.youtube.com/watch?v=dQ")
+        return ConversationHandler.END
+
+async def cancel(update:Update, context:CallbackContext):
+    await update.message.reply_text('Downloading process cancelled 🥲')
+    return ConversationHandler.END
         
 async def Download(url):
     # Configure yt-dlp options
@@ -239,6 +289,16 @@ if __name__ == "__main__":
     
     ######## Initializing Application with our Telegram Token
     app = Application.builder().token(TOKEN).read_timeout(30).write_timeout(30).build()
+
+    ######## Adding Conversation Handler
+    conv_handler = ConversationHandler(
+        entry_points=[CommandHandler("download_video", download_video)],
+        states={
+            YTURL: [MessageHandler((filters.TEXT & ~filters.COMMAND), get_url)],
+        },
+        fallbacks=[CommandHandler("cancel", cancel)]
+    )
+    app.add_handler(conv_handler)
   
     ######## Adding Command Handlers
     app.add_handler(CommandHandler('start', start_command))
