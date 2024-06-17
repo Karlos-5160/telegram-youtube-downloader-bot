@@ -37,7 +37,8 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 ⚙️ Available Commands:
 /start - Welcome message
 /help - List of commands
-/download - Download a YouTube video 
+/download - Download a YouTube video
+/cancel - Cancel the downloading process
 /info - Information about the bot
 /bored - Play emoji game with me
 ''')
