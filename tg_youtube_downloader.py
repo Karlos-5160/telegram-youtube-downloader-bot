@@ -30,7 +30,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hello, welcome to the Youtube downloader Bot 2.0 🤖 by Karlos :)")
+    await update.message.reply_text("Hello, welcome to the Youtube downloader Bot 3.0 🤖 by Karlos :)")
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('''
@@ -45,7 +45,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def info_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     info_message = """
-🤖 **Youtube Downloader Bot 2.0** 🤖
+🤖 **Youtube Downloader Bot 3.0** 🤖
 
 Hello there! I am a YouTube Downloader Bot created by 🐍 Python Developer - @Karlos_5160. 
 You can use me to download YouTube videos directly from their URLs.
@@ -79,7 +79,7 @@ The source code for this bot is available on [GitHub](https://github.com/Karlos-
 📄 **Disclaimer**
 Please Ensure you have the necessary permissions to download and use the videos you download using this bot.
 
-Enjoy downloading videos with the Youtube Downloader Bot 2.0! 🎥✨
+Enjoy downloading videos with the Youtube Downloader Bot 3.0! 🎥✨
                                    Copyright © 2024 Karlos
 """
     await update.message.reply_text(info_message)
