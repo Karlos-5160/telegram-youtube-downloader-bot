@@ -255,4 +255,4 @@ if __name__ == "__main__":
 
     ######## Polling the Bot
     # print('Polling...')
-    # app.run_polling(poll_interval=2)  # check for new messages updates every 2 seconds
+    app.run_polling(poll_interval=2)  # check for new messages updates every 2 seconds
