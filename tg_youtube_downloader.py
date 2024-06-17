@@ -54,6 +54,7 @@ You can use me to download YouTube videos directly from their URLs.
 /start - Welcome message
 /help - List of commands
 /download - Download a YouTube video 
+/cancel - Cancel the downloading process
 /info - Information about the bot
 /bored - Play emoji game with me
 
