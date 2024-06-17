@@ -1,6 +1,6 @@
 # YouTube Downloader Bot
 
-A Python-based YouTube downloader bot that allows users to download videos from YouTube in various formats and resolutions. This bot utilizes the `yt-dlp` library to fetch video metadata and download content directly from YouTube.
+A Python-based YouTube downloader bot that allows users to download videos from various platforms like YouTube, Twitter, Vimeo and many more in various formats and resolutions. This bot utilizes the `yt-dlp` library to fetch video metadata and download content directly from YouTube.
 Telegram Link of he BOT - https://t.me/Youtube_Downloader45_Bot
 or just search on Telegram @Youtube_Downloader45_Bot
 
