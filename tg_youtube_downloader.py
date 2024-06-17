@@ -292,7 +292,7 @@ if __name__ == "__main__":
 
     ######## Adding Conversation Handler
     conv_handler = ConversationHandler(
-        entry_points=[CommandHandler("download_video", download_video)],
+        entry_points=[CommandHandler("download_command", download_command)],
         states={
             YTURL: [MessageHandler((filters.TEXT & ~filters.COMMAND), get_url)],
         },
