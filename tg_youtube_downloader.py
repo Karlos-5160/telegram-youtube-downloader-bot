@@ -158,7 +158,6 @@ async def get_url(update:Update, context:CallbackContext):
 
     except:
         await update.message.reply_text("Please provide a valid URL.")
-        await update.message.reply_text("Example: /download https://www.youtube.com/watch?v=dQ")
         return ConversationHandler.END
 
 async def cancel(update:Update, context:CallbackContext):
@@ -292,7 +291,7 @@ if __name__ == "__main__":
 
     ######## Adding Conversation Handler
     conv_handler = ConversationHandler(
-        entry_points=[CommandHandler("download_command", download_command)],
+        entry_points=[CommandHandler("download", download_command)],
         states={
             YTURL: [MessageHandler((filters.TEXT & ~filters.COMMAND), get_url)],
         },
@@ -303,7 +302,7 @@ if __name__ == "__main__":
     ######## Adding Command Handlers
     app.add_handler(CommandHandler('start', start_command))
     app.add_handler(CommandHandler('help', help_command))
-    app.add_handler(CommandHandler('download', download_command))
+    # app.add_handler(CommandHandler('download', download_command))
     app.add_handler(CommandHandler('info', info_command))
     app.add_handler(CommandHandler('bored', bored_command))
     
