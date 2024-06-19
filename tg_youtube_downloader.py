@@ -8,8 +8,7 @@ from keep_alive import keep_alive
 from dotenv import load_dotenv
 from typing import Final
 from telegram import Update
-from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
-from telegram.ext import ConversationHandler, CallbackContext
+from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters, ConversationHandler, CallbackContext
 
 keep_alive()
 # Load environment variables from .env file
